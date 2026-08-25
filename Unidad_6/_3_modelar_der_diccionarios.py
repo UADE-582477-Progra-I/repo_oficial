@@ -51,11 +51,18 @@ tema_1 = {
 }
 
 tema_2 = {
-    # completar...
+  "id_tema":     2,
+  "tema":        "Swim",
+  "autor":       "BTS"
+}
+
+diccionario_tema = {
+
 }
 
 # Paso 2: Armá la lista de temas con los dos registros creados arriba.
-# temas =
+
+temas = [tema_1, tema_2]
 
 
 # ********** FUNCIONES ***************
@@ -79,21 +86,33 @@ def mostrar_temas(temas):
 #   id=5, tema="SFTU",          autor="Drake"
 
 def ingresar_tema():
-    """Solicita los campos de un tema por teclado y retorna el diccionario."""
+    id_tema = int(input("Ingrese el ID del tema: "))
+    tema_nombre = input("Ingrese el nombre del tema: ")
+    autor = input("Ingrese el nombre del autor: ")
 
+    temas = {
+    "id_tema": id_tema,
+    "tema": tema_nombre,
+    "autor": autor
+   }
+   
+temas.append(temas)
+
+#temas.append(diccionario_tema)
 
 # Paso 4: generá un Loop en la función main que llame a la función
 # ingresar_tema() - se sugiere que el usuario indique fin de carga
 def main():
+    while True:    
+        ingresar_tema() 
+        continuar = input("Desea ingresar otro tema? (S/N): ")
+        if continuar.strip().lower() == "n":
+            break
+        mostrar_usuarios(usuarios)
+        mostrar_temas(temas)
 
-    """
-    Tu código aquí
-    """
-    # mostrar_usuarios(usuarios)
-    # mostrar_temas(temas)
 
-
-
+main()
 # ── Actividad 2 — Tuplas de ids válidos para validar ─────────
 
 # Para la Actividad 3 vamos a necesitar validar que el usuario
